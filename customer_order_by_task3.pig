@@ -7,7 +7,7 @@ group_comp_file = GROUP file BY Company;
 
 new_group_file = FOREACH group_comp_file generate group, COUNT(file);
 
-sorted_group_file = ORDER new_group_file BY $1;
+sorted_group_file = ORDER new_group_file BY $1 DESC;
 
 output = FOREACH sorted_group_file generate $0;
 
